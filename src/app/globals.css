@@ -6,7 +6,6 @@
   --muted: #6f6f6b;
   --border: #ddd9d0;
   --accent: #3d5a4c;
-  --header-height: 3.5rem;
 }
 
 @theme inline {
@@ -28,45 +27,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-  line-height: 1.6;
-  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
   background: #e8e4da;
   color: var(--foreground);
-}
-
-@layer components {
-  .page-shell {
-    @apply mx-auto w-full max-w-2xl px-4 sm:px-6;
-  }
-
-  .section-block {
-    @apply border-t border-border pt-10 sm:pt-12;
-  }
-
-  .btn {
-    @apply inline-flex min-h-11 items-center justify-center rounded-md border px-4 py-2.5 text-sm font-medium transition-colors;
-  }
-
-  .btn-primary {
-    @apply border-foreground bg-foreground text-background hover:bg-[#2d2d2b];
-  }
-
-  .btn-secondary {
-    @apply border-border bg-background text-foreground hover:border-foreground/30;
-  }
-
-  .link-inline {
-    @apply text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground;
-  }
-}
-
-details summary {
-  list-style: none;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
 }

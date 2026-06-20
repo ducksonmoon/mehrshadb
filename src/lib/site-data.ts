@@ -12,7 +12,7 @@ export const site = {
     github: "https://github.com/ducksonmoon",
   },
   summary:
-    "I build full-stack web applications across Angular, .NET, and React — from enterprise ERP at System Group to product work at Nebig and personal projects.",
+    "Full-Stack Software Engineer with 6+ years building enterprise and product web applications. At System Group I work across the full stack of Rahkaran ERP — an Angular micro-frontend monorepo with 400+ packages and a C#/.NET 8 layered backend. For the past two years I have been the primary engineer on the Human Capital Management Performance Management module, owning everything from SQL Server and C# business logic through ASP.NET Core REST APIs to Angular UI. Before System Group I co-built Nebig, a Persian book social platform, as a full-stack engineer.",
   skillGroups: [
     {
       label: "Languages",
