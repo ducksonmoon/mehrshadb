@@ -1,36 +1,31 @@
 import { site } from "@/lib/site-data";
 
+const footerLinks = [
+  { label: "Email", href: `mailto:${site.email}` },
+  { label: "LinkedIn", href: site.links.linkedin, external: true },
+  { label: "GitHub", href: site.links.github, external: true },
+] as const;
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-2xl px-6 py-10 text-sm text-muted">
-        <p>
-          <a
-            href={`mailto:${site.email}`}
-            className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
-          >
-            {site.email}
-          </a>
-          <span className="mx-2 text-border">·</span>
-          <a
-            href={site.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground"
-          >
-            LinkedIn
-          </a>
-          <span className="mx-2 text-border">·</span>
-          <a
-            href={site.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground"
-          >
-            GitHub
-          </a>
-        </p>
-        <p className="mt-3">{site.location}</p>
+    <footer className="mt-16 border-t border-border">
+      <div className="page-shell py-10 text-sm text-muted">
+        <ul className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-2">
+          {footerLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                {...("external" in link && link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="link-inline"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4">{site.location}</p>
       </div>
     </footer>
   );

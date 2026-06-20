@@ -1,13 +1,14 @@
 type SectionHeadingProps = {
   id: string;
   children: React.ReactNode;
+  className?: string;
 };
 
-export function SectionHeading({ id, children }: SectionHeadingProps) {
+export function SectionHeading({ id, children, className = "" }: SectionHeadingProps) {
   return (
     <h2
       id={id}
-      className="mb-6 scroll-mt-24 text-xs font-medium uppercase tracking-[0.2em] text-muted"
+      className={`scroll-mt-20 mb-5 text-xs font-medium uppercase tracking-[0.18em] text-muted ${className}`}
     >
       {children}
     </h2>
