@@ -8,7 +8,7 @@ export const site = {
   phone: "(+98) 911-151-3303",
   links: {
     linkedin: "https://linkedin.com/in/mehrshad-baqerzadegan",
-    website: "https://ducksonmoon.github.io/mehrshadb",
+    website: "https://mehrshadb.ir",
     github: "https://github.com/ducksonmoon",
   },
   summary:

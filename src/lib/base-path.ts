@@ -1,9 +1,10 @@
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://mehrshadb.ir";
 
 export function withBasePath(path: string): string {
-  if (!basePath || path.startsWith("http") || path.startsWith("mailto:")) {
+  if (path.startsWith("http") || path.startsWith("mailto:")) {
     return path;
   }
 
-  return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+  return path.startsWith("/") ? path : `/${path}`;
 }

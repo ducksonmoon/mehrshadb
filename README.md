@@ -2,7 +2,7 @@
 
 Personal website for Mehrshad Baqerzadegan — full-stack software engineer portfolio and resume.
 
-Live site: [ducksonmoon.github.io/mehrshadb](https://ducksonmoon.github.io/mehrshadb)
+Live site: [mehrshadb.ir](https://mehrshadb.ir)
 
 ## Development
 
@@ -19,18 +19,40 @@ Resume content lives in `src/lib/site-data.ts`. The PDF is served from `public/r
 
 To update the resume file, replace `public/resume.pdf` with your latest version.
 
-Add your headshot as `public/photo.jpg` (square works best, roughly 400×400 px). Until then, the site shows your initials as a placeholder.
+Add your headshot as `public/photo.jpg` (square works best, roughly 400×400 px).
 
 ## Deploy to GitHub Pages
 
-The site is a static export configured for the `ducksonmoon/mehrshadb` repo.
+Repo: [github.com/ducksonmoon/mehrshadb](https://github.com/ducksonmoon/mehrshadb)
 
-1. Push to `main` — the GitHub Actions workflow builds and deploys automatically.
-2. In the repo on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+Custom domain: **mehrshadb.ir**
 
-The site will be published at `https://ducksonmoon.github.io/mehrshadb`.
+### One-time GitHub setup
 
-To test a production build locally (uses `/mehrshadb` base path automatically):
+1. Push this repo to `main`.
+2. Go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+3. Under **Custom domain**, enter `mehrshadb.ir` and save.
+4. Enable **Enforce HTTPS** once the certificate is ready.
+
+### DNS setup (at your domain registrar)
+
+Add these records for `mehrshadb.ir`:
+
+| Type | Name | Value |
+|------|------|-------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `ducksonmoon.github.io` |
+
+DNS can take up to 24 hours to propagate. GitHub will show a green check when it is configured correctly.
+
+### How deployment works
+
+Every push to `main` triggers `.github/workflows/deploy.yml`, which builds a static export and publishes it to GitHub Pages.
+
+To test a production build locally:
 
 ```bash
 npm run build

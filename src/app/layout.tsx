@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { basePath } from "@/lib/base-path";
+import { siteUrl } from "@/lib/base-path";
 import "./globals.css";
-
-const siteUrl = basePath
-  ? `https://ducksonmoon.github.io${basePath}`
-  : "http://localhost:3000";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
